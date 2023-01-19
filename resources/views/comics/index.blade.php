@@ -27,7 +27,7 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="{{route('comics.create')}}">Crea un nuovo fumetto</a>
+        <a href="{{route('comics.create', $comic->id)}}" class="btn btn-primary">Crea un nuovo fumetto</a>
                 
     </div>
 @endsection  

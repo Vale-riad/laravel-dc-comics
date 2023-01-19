@@ -22,8 +22,8 @@
                 <input type="text" class="form-control" id="series" name="series" min="1" max="20" required>
             </div>
             <div class="mb-3">
-                <label for="sale_date" class="form-label">Serie*</label>
-                <input type="date" class="form-control" id="sale_date" name="sale_date"  required>
+                <label for="sale_date" class="form-label">Data d'uscita*</label>
+                <input type="date" class="form-control" id="sale_date" name="sale_date">
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo*</label>
