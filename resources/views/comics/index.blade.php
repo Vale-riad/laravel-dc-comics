@@ -11,6 +11,7 @@
                 <th scope="col">Serie</th>
                 <th scope="col">Data Vendita</th>
                 <th scope="col">Tipo</th>
+                <th scope="col">Azione</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -21,10 +22,12 @@
                     <td>{{$comic->series}}</td>
                     <td>{{$comic->sale_date}}</td>
                     <td>{{$comic->type}}</td>
+                    <td><a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi</a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        <a href="{{route('comics.create')}}">Crea un nuovo fumetto</a>
                 
     </div>
 @endsection  

@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
-            $table->string('description', 200);
+            $table->text('description');
             $table->string('image')->nullable();
-            $table->float('price', 3, 2);
-            $table->string('series', 20);
-            $table->date('sale_date');
+            $table->float('price', 6, 2);
+            $table->string('series', 50);
+            $table->date('sale_date')->nullable();
             $table->string('type');
             $table->timestamps();
         });
