@@ -24,6 +24,7 @@
                     <td>{{$comic->type}}</td>
                     <td><a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi</a></td>
                 </tr>
+                
                 @endforeach
             </tbody>
         </table>

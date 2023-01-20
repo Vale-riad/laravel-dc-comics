@@ -41,12 +41,7 @@ class ComicController extends Controller
         // creo l'oggetto model
         $new_comic = new Comic();
         // compilo l'oggetto (o meglio le sue proprietà)
-        $new_comic->title = $data['title'];
-        $new_comic->type = $data['type'];
-        $new_comic->series = $data['series'];
-        $new_comic->price = $data['price'];
-        $new_comic->description = $data['description'];
-        // salvo (creo a db la riga)
+        $new_comic->fill($data);
         $new_comic->save();
 
         // rendirizzo l'utente alla pagina della pasta appena creata

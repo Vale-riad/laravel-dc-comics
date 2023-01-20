@@ -16,7 +16,7 @@
                     <option value="comic-book">Comic Book</option>
                     <option value="graphic-novel">Graphic Novel</option>
                 </select>
-            </div>''
+            </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Serie*</label>
                 <input type="text" class="form-control" id="series" name="series" min="1" max="20" required>
