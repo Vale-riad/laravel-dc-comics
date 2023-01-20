@@ -78,9 +78,14 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        //recupero tutti i dati del form
+        $data = $request->all();
+        //aggiorno la risorsa per intero
+        $comic->update($data);
+        //faccio un redirect alla pagina della risorsa aggiornta(show in questo caso)
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -89,8 +94,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
+
     }
 }

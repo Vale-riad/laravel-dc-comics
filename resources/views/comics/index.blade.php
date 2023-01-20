@@ -11,7 +11,7 @@
                 <th scope="col">Serie</th>
                 <th scope="col">Data Vendita</th>
                 <th scope="col">Tipo</th>
-                <th scope="col">Azione</th>
+                <th scope="col" class="text-center">Azione</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -22,9 +22,18 @@
                     <td>{{$comic->series}}</td>
                     <td>{{$comic->sale_date}}</td>
                     <td>{{$comic->type}}</td>
-                    <td><a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi</a></td>
+                    <td >
+                    <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi</a>
+                    <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning">Modifica</a>
+                    <td>
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Cancella</button>
+                    </form>
+                </td>
                 </tr>
-                
+        
                 @endforeach
             </tbody>
         </table>
