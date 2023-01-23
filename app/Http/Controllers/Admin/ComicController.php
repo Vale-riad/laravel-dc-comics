@@ -46,7 +46,7 @@ class ComicController extends Controller
                 'type' => ['required',
                 Rule::in(['comic-book','graphic-novel'])
             ],
-            'description' => 'required| string| between:10,50',
+            'description' => 'required| string',
             'price' => 'required| numeric| between:0.01, 9999.99',
 
             ]);
@@ -93,6 +93,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+            'title' => 'required| string| between:10,50',
+            'series' => 'required| string| between:10,50',
+            'sale_date' => 'nullable| date',
+            'type' => ['required',
+            Rule::in(['comic-book','graphic-novel'])
+        ],
+        'description' => 'required| string',
+        'price' => 'required| numeric| between:0.01, 9999.99',
+
+        ]);
         //recupero tutti i dati del form
         $data = $request->all();
         //aggiorno la risorsa per intero
